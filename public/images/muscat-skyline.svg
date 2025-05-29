@@ -1,0 +1,28 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F3B8B;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#1F3B8B;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  <!-- Traditional Omani Architecture -->
+  <g fill="url(#skylineGradient)">
+    <!-- Grand Mosque -->
+    <path d="M400,200 L450,200 L450,100 L470,100 L470,80 L500,80 L500,100 L520,100 L520,150 
+             L540,150 C540,150 550,130 560,130 C570,130 580,150 580,150 L600,150 L600,200 L650,200 
+             L650,180 L680,180 L680,200 L700,200 L700,300 L400,300 Z"/>
+    
+    <!-- Traditional Fort -->
+    <path d="M100,250 L150,250 L150,150 L180,150 L180,130 L200,130 L200,150 L220,150 L220,200 
+             L240,200 L240,180 L260,180 L260,200 L280,200 L280,250 L300,250 L300,300 L100,300 Z"/>
+    
+    <!-- Modern Buildings with Arabic Influence -->
+    <path d="M320,280 L350,280 L350,100 L370,100 L370,80 L390,80 L390,100 L410,100 L410,150 
+             L430,150 L430,180 L450,180 L450,200 L470,200 L470,280 L490,280 L490,300 L320,300 Z"/>
+    
+    <!-- Palm Trees -->
+    <path d="M160,290 C160,290 150,270 160,260 C170,250 180,270 180,270 L175,290 Z"/>
+    <path d="M360,290 C360,290 350,270 360,260 C370,250 380,270 380,270 L375,290 Z"/>
+    <path d="M560,290 C560,290 550,270 560,260 C570,250 580,270 580,270 L575,290 Z"/>
+  </g>
+</svg> 

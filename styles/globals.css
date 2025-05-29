@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+/* Base Design Tokens */
+:root {
+  /* Colors */
+  --color-primary: #083c54;
+  --color-primary-dark: #1c334a;
+  --color-primary-light: #e5f0ff;
+
+  /* Text Colors */
+  --color-heading: #1a1a1a;
+  --color-body: #4a4a4a;
+  --color-muted: #737373;
+  --color-light: #f5f5f5;
+
+  /* Background Colors */
+  --color-background: #ffffff;
+  --color-background-alt: #f9fafb;
+  --color-background-dark: #1a1a1a;
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Font Families */
+  --font-primary: "Manrope", system-ui, sans-serif;
+  --font-heading: "Manrope", system-ui, sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Spacing */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 0.125rem; /* 2px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem; /* 8px */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-2xl: 1rem; /* 16px */
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 350ms;
+
+  /* Z-index */
+  --z-negative: -1;
+  --z-elevate: 1;
+  --z-sticky: 100;
+  --z-drawer: 200;
+  --z-modal: 300;
+  --z-popover: 400;
+  --z-maximum: 999;
+}
+
+/* Base Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--font-primary);
+    color: var(--color-body);
+    background-color: var(--color-background);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+    font-weight: var(--font-bold);
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-heading {
+    color: var(--color-heading);
+  }
+
+  .text-body {
+    color: var(--color-body);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+}
+
+/* Animation Classes */
+.animate-fadeIn {
+  animation: fadeIn var(--transition-normal) ease-in-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft var(--transition-normal) ease-in-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight var(--transition-normal) ease-in-out forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-body);
+}
+
+@layer base {
+  :root {
+    --primary-color: 200 16 46; /* #C8102E Omani Red */
+    --secondary-color: 0 114 54; /* #007236 Omani Green */
+    --heading-color: 15 23 42; /* #0F172A Dark blue */
+    --body-color: 26 43 75; /* #1A2B4B Main text */
+    --muted-color: 100 116 139; /* #64748B Secondary text */
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1240px] mx-auto px-5 md:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-md font-semibold text-sm 
+      transition-all duration-300 relative overflow-hidden;
+  }
+
+  .btn::after {
+    @apply content-[''] absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .btn:hover::after {
+    @apply opacity-100;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white shadow-lg shadow-primary/20 
+      hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30
+      active:translate-y-0 active:shadow-md;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white 
+      hover:bg-white hover:text-primary hover:-translate-y-0.5
+      active:translate-y-0 active:bg-white/90;
+  }
+}
+
+.infinity-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawPath 2s ease forwards;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.moving-dot {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.trail-dots circle {
+  animation: fadeTrail 1s linear forwards;
+}
+
+@keyframes fadeTrail {
+  0% {
+    opacity: 0.6;
+    r: 4;
+  }
+  100% {
+    opacity: 0;
+    r: 1;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 1024px) {
+  .hero-grid {
+    @apply flex flex-col-reverse;
+  }
+
+  .infinity-animation {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    @apply w-full;
+  }
+
+  .hero-content {
+    @apply text-center;
+  }
+
+  .hero-buttons {
+    @apply justify-center;
+  }
+
+  .arabic-overlay {
+    @apply opacity-[0.02] text-[120px];
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    @apply text-3xl;
+  }
+
+  .hero-description {
+    @apply text-base;
+  }
+}
+
+/* Update infinity animation container styles */
+.infinity-animation {
+  @apply p-4 md:p-8; /* Add padding */
+  max-width: calc(100% + 2rem); /* Account for right overflow */
+  margin-right: -2rem; /* Negative margin to allow overflow */
+}
+
+/* Update hero grid gap for better spacing */
+.hero-grid {
+  @apply gap-8 md:gap-12 lg:gap-16;
+}
+
+/* Ensure container allows overflow */
+.hero-section {
+  @apply overflow-visible;
+}
+
+/* Update Arabic text overlay for better positioning */
+.arabic-overlay {
+  @apply opacity-[0.05] text-[120px] md:text-[180px];
+  line-height: 1;
+  writing-mode: vertical-rl;
+}
+
+/* Update section spacing utility */
+.section-padding {
+  @apply py-20 md:py-24 lg:py-16; /* Increased from py-16 md:py-20 lg:py-24 */
+}
+
+/* Add section spacing for consecutive sections */
+.section-spacing {
+  @apply border-t border-gray-100;
+}
+
+/* Update section margin */
+.section-margin {
+  @apply mb-16 md:mb-20 lg:mb-24; /* Increased from mb-12 md:mb-16 lg:mb-20 */
+}
+
+/* Update heading styles for consistency */
+.section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-heading;
+}
+
+.section-subtitle {
+  @apply text-sm font-semibold tracking-wider text-primary uppercase;
+}
+
+/* Professional shadows */
+.card-shadow {
+  @apply shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.08)] transition-shadow;
+}
+
+/* Professional hover effects */
+.hover-up {
+  @apply transition-transform hover:-translate-y-1;
+}
+
+/* Add to your existing styles */
+.sticky-nav {
+  @apply backdrop-blur-lg bg-white/90;
+  transition: background-color 0.3s ease;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  @apply fixed inset-0 bg-black/50 z-40;
+  backdrop-filter: blur(4px);
+}
+
+/* Active nav item indicator */
+.nav-indicator {
+  @apply absolute -bottom-[21px] left-0 right-0 h-0.5 bg-primary;
+  transform-origin: left;
+}
+
+/* Add these styles to your existing CSS */
+.nav-link {
+  @apply cursor-pointer relative;
+}
+
+.nav-link:hover {
+  @apply text-primary;
+}
+
+/* Update existing styles */
+.logo {
+  @apply cursor-pointer;
+}
+
+/* Add pointer cursor to all interactive elements */
+button,
+a,
+[role="button"] {
+  @apply cursor-pointer;
+}
